@@ -21,6 +21,7 @@ size = Vector2(32, 32)
 script = ExtResource("1_e43uq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
 material = SubResource("ShaderMaterial_dicft")
 texture = SubResource("AtlasTexture_bagmj")
 
@@ -30,6 +31,18 @@ input_pickable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_lhiw5")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -19.0
+offset_top = -28.0
+offset_right = 68.0
+offset_bottom = -5.0
+scale = Vector2(0.438978, 0.438978)
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "item_name"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="input_event" from="StaticBody2D" to="." method="_on_static_body_2d_input_event"]
 [connection signal="mouse_entered" from="StaticBody2D" to="." method="_on_static_body_2d_mouse_entered"]

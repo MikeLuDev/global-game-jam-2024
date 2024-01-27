@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c4oeuawfnblf0"]
 
 [ext_resource type="PackedScene" uid="uid://dimao80uj5hjf" path="res://scenes/king.tscn" id="1_gyilu"]
-[ext_resource type="PackedScene" uid="uid://kqarvpjuwnwj" path="res://scenes/player.tscn" id="2_hblw1"]
+[ext_resource type="PackedScene" uid="uid://kqarvpjuwnwj" path="res://singletons/player.tscn" id="2_hblw1"]
 
 [node name="ThroneRoom" type="Node2D"]
 
