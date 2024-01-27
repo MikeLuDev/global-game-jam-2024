@@ -17,8 +17,8 @@ var attribute_options: Array[String] = []
 var current_target_item_name: String
 
 # TODO: this data will not persist between scene changes if the king is unloaded.
-# Either we need to make sure that there
-# are no scene transitions, or refactor this so that the data is stored as part of a global state
+# We should abstract shared data into singletons:
+# https://docs.godotengine.org/en/stable/tutorials/scripting/singletons_autoload.html
 
 func _init():
 	load_item_data()
