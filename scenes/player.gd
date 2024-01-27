@@ -15,7 +15,8 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if hands != null:
+		hands.position = position + (Vector2.UP * 32);
 
 func _physics_process(delta):
 	handle_camera_zoom()
@@ -43,9 +44,9 @@ func give_item(item: String):
 func give_hand_item(item: InteractiveObject):
 	if (hands != null):
 		hands.position = position + (Vector2.DOWN * 32);
-		hands.visible = true;
+		#hands.visible = true;
 		hands.get_node("StaticBody2D/CollisionShape2D").disabled = false;
 		
-	item.visible = false;
+	#item.visible = false;
 	item.get_node("StaticBody2D/CollisionShape2D").disabled = true;
 	hands = item;

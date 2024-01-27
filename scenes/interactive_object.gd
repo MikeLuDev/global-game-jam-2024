@@ -2,10 +2,17 @@ extends Node2D
 
 class_name InteractiveObject
 
+enum ItemStorageType {
+	PocketInventory,
+	Handheld,
+}
+
 @export var interact_range = 128
 @export var player_scene: Node
-@export var reward_item_on_success: String
+@export var item_storage_type: ItemStorageType = ItemStorageType.PocketInventory
+@export var item_name: String
 @export var collision_disabled: bool = false
+@export var texture: Texture2D
 
 var attempts = 0
 
@@ -14,6 +21,8 @@ signal interaction_fail(attempts: int)
 
 func _ready():
 	$StaticBody2D/CollisionShape2D.disabled = collision_disabled
+	if texture != null:
+		$Sprite2D.texture = texture;
 
 # Create a custom override in this for child classes
 func handle_primary_action(event: InputEvent):
@@ -23,10 +32,11 @@ func handle_primary_action(event: InputEvent):
 	if distance < interact_range:
 		interaction_success.emit()
 		print("Unhandled primary action click event for object", distance)
-		if reward_item_on_success:
-			player.give_item(reward_item_on_success)
+		if item_storage_type == ItemStorageType.PocketInventory && item_name:
+			player.give_item(item_name)
 			queue_free()
-		else:
+		
+		if item_storage_type == ItemStorageType.Handheld:
 			player.give_hand_item(self)
 	else:
 		attempts += 1

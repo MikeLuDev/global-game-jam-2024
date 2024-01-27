@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c68cqvr5yl3dt"]
+[gd_scene load_steps=26 format=3 uid="uid://c68cqvr5yl3dt"]
 
 [ext_resource type="PackedScene" uid="uid://ccawi8bu7hpbi" path="res://scenes/debug.tscn" id="1_jlxaq"]
 [ext_resource type="Texture2D" uid="uid://33cdxg3bp80w" path="res://assets/temp/TX Plant.png" id="2_453wm"]
@@ -1760,6 +1760,14 @@ sources/7 = SubResource("TileSetAtlasSource_j20i2")
 sources/8 = SubResource("TileSetAtlasSource_i7hhc")
 pattern_0 = SubResource("TileMapPattern_3nvap")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw7gb"]
+atlas = ExtResource("4_cibb1")
+region = Rect2(289, 486, 31, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qj42u"]
+atlas = ExtResource("4_cibb1")
+region = Rect2(164, 347, 25, 34)
+
 [node name="Main" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1777,13 +1785,14 @@ position = Vector2(544, 302)
 
 [node name="InteractiveTile" parent="." instance=ExtResource("12_ji1i2")]
 position = Vector2(587, 305)
-reward_item_on_success = "pocket"
+item_name = "key"
+texture = SubResource("AtlasTexture_cw7gb")
 
 [node name="InteractiveObject" parent="." instance=ExtResource("12_ji1i2")]
 position = Vector2(363, 418)
-collision_disabled = true
+item_storage_type = 1
+texture = SubResource("AtlasTexture_qj42u")
 
 [node name="InteractiveObject2" parent="." instance=ExtResource("12_ji1i2")]
 position = Vector2(540, 413)
-
-[connection signal="interaction_fail" from="InteractiveTile" to="Debug" method="_on_interactive_tile_interaction_fail"]
+item_storage_type = 1
