@@ -5,6 +5,7 @@
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="2_04dud"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dicft"]
+resource_local_to_scene = true
 shader = ExtResource("2_04dud")
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 0.0

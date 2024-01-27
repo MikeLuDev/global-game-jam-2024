@@ -1777,10 +1777,13 @@ position = Vector2(544, 302)
 
 [node name="InteractiveTile" parent="." instance=ExtResource("12_ji1i2")]
 position = Vector2(587, 305)
-reward_item_on_success = "aasdf"
+reward_item_on_success = "pocket"
 
 [node name="InteractiveObject" parent="." instance=ExtResource("12_ji1i2")]
-position = Vector2(543, 382)
-reward_item_on_success = "other"
+position = Vector2(363, 418)
+collision_disabled = true
+
+[node name="InteractiveObject2" parent="." instance=ExtResource("12_ji1i2")]
+position = Vector2(540, 413)
 
 [connection signal="interaction_fail" from="InteractiveTile" to="Debug" method="_on_interactive_tile_interaction_fail"]

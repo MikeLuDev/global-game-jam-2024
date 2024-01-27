@@ -6,7 +6,8 @@ extends CharacterBody2D
 @export var min_zoom = Vector2(2, 2)
 @export var max_zoom = Vector2(4, 4)
 
-var inventory = []
+var pockets = []
+var hands: InteractiveObject
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,5 +37,15 @@ func handle_camera_zoom():
 	
 
 func give_item(item: String):
-	inventory.push_back(item)
-	print(inventory)
+	pockets.push_back(item)
+	print(pockets)
+	
+func give_hand_item(item: InteractiveObject):
+	if (hands != null):
+		hands.position = position + (Vector2.DOWN * 32);
+		hands.visible = true;
+		hands.get_node("StaticBody2D/CollisionShape2D").disabled = false;
+		
+	item.visible = false;
+	item.get_node("StaticBody2D/CollisionShape2D").disabled = true;
+	hands = item;

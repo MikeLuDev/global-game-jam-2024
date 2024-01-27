@@ -5,11 +5,15 @@ class_name InteractiveObject
 @export var interact_range = 128
 @export var player_scene: Node
 @export var reward_item_on_success: String
+@export var collision_disabled: bool = false
 
 var attempts = 0
 
 signal interaction_success
 signal interaction_fail(attempts: int)
+
+func _ready():
+	$StaticBody2D/CollisionShape2D.disabled = collision_disabled
 
 # Create a custom override in this for child classes
 func handle_primary_action(event: InputEvent):
@@ -22,6 +26,8 @@ func handle_primary_action(event: InputEvent):
 		if reward_item_on_success:
 			player.give_item(reward_item_on_success)
 			queue_free()
+		else:
+			player.give_hand_item(self)
 	else:
 		attempts += 1
 		interaction_fail.emit(attempts)
