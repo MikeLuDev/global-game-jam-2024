@@ -21,6 +21,7 @@ func _process(delta):
 ## Picks a mood for the king and an item the king wants based on that mood
 func generate_new_task():
 	print("## KING - Generating new task")
+	GameManager.init_round()
 	
 	# Pick a random mood
 	var mood = GameManager.mood_options[rng.randi_range(0, GameManager.mood_options.size() - 1)]
@@ -96,6 +97,7 @@ func give_item_to_king(item_name: String):
 	print("New king happiness: ", GameManager.king_current_happiness)
 	
 	say("Thanks!")
+	generate_new_task()
 
 func _on_static_body_2d_input_event(viewport, event: InputEvent, shape_idx):
 	if event.is_action_pressed("action_primary"):
