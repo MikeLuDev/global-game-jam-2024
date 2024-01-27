@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt8egdhvfrs6x"
-path="res://.godot/imported/TX Shadow.png-331ee864975621498c14072a1ebdd894.ctex"
+uid="uid://dbbyaqw4pstpv"
+path="res://.godot/imported/ratking2.bmp-d1a830f3280a983aef7637290b67ddb3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TX Shadow.png"
-dest_files=["res://.godot/imported/TX Shadow.png-331ee864975621498c14072a1ebdd894.ctex"]
+source_file="res://assets/temp/ratking2.bmp"
+dest_files=["res://.godot/imported/ratking2.bmp-d1a830f3280a983aef7637290b67ddb3.ctex"]
 
 [params]
 

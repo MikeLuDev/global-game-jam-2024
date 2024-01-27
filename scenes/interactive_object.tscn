@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dd311usgrxc3q"]
 
-[ext_resource type="Texture2D" uid="uid://c73vonwne1flu" path="res://assets/TX Props.png" id="1_6f1xr"]
+[ext_resource type="Texture2D" uid="uid://c73vonwne1flu" path="res://assets/temp/TX Props.png" id="1_6f1xr"]
 [ext_resource type="Script" path="res://scenes/interactive_object.gd" id="1_e43uq"]
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="2_04dud"]
 
