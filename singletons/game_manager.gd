@@ -16,6 +16,11 @@ var attribute_options: Array[String] = []
 
 var current_target_item_name: String
 
+var round_started: bool = true
+var round_count: int = 0
+var round_time_ms: float = 0
+var round_max_time_ms: float = 42
+
 func _init():
 	load_item_data()
 	king_current_happiness = king_initial_happiness
@@ -44,6 +49,20 @@ func load_item_data():
 	print("## ALL ATTRIBUTES - ", attribute_options)
 	print("## ALL MOODS - ", mood_options)
 	
+func _process(delta):
+	if (round_started):
+		round_time_ms += delta
+		if round_time_ms >= round_max_time_ms:
+			game_over()
+	
+func init_round():
+	round_count += 1
+	round_time_ms = 0
+	round_started = true
+	print("Starting Round #{round_count}".format({ "round_count": round_count }))
+	
 ## TODO: handle game over state
 func game_over():
+	round_started = false
+	round_count = 0
 	print("Game over :'(")
