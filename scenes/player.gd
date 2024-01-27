@@ -6,6 +6,8 @@ extends CharacterBody2D
 @export var min_zoom = Vector2(2, 2)
 @export var max_zoom = Vector2(4, 4)
 
+var inventory = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -32,3 +34,7 @@ func handle_camera_zoom():
 		
 	$Camera2D.zoom = clamp(new_zoom, min_zoom, max_zoom)
 	
+
+func give_item(item: String):
+	inventory.push_back(item)
+	print(inventory)

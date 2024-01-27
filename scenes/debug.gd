@@ -14,3 +14,6 @@ func _process(_delta: float):
 func handle_visibility():
 	if Input.is_action_just_pressed("debug_toggle"):
 		visible = !visible
+
+func _on_interactive_tile_interaction_fail(attempts):
+	print("failed attempt", attempts)

@@ -24,6 +24,7 @@ material = SubResource("ShaderMaterial_dicft")
 texture = SubResource("AtlasTexture_bagmj")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
 input_pickable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]

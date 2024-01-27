@@ -4,14 +4,27 @@ class_name InteractiveObject
 
 @export var interact_range = 128
 @export var player_scene: Node
+@export var reward_item_on_success: String
+
+var attempts = 0
+
+signal interaction_success
+signal interaction_fail(attempts: int)
 
 # Create a custom override in this for child classes
 func handle_primary_action(event: InputEvent):
 	var player = get_node("/root/Main/Player")
 	var distance = position.distance_to(player.position)
+
 	if distance < interact_range:
+		interaction_success.emit()
 		print("Unhandled primary action click event for object", distance)
+		if reward_item_on_success:
+			player.give_item(reward_item_on_success)
+			queue_free()
 	else:
+		attempts += 1
+		interaction_fail.emit(attempts)
 		print("out of range")
 
 func handle_click_release(event: InputEvent):
