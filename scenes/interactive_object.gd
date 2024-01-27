@@ -1,8 +1,18 @@
 extends Node2D
 
+class_name InteractiveObject
+
+@export var interact_range = 128
+@export var player_scene: Node
+
 # Create a custom override in this for child classes
 func handle_primary_action(event: InputEvent):
-	print("Unhandled primary action click event for object")
+	var player = get_node("/root/Main/Player")
+	var distance = position.distance_to(player.position)
+	if distance < interact_range:
+		print("Unhandled primary action click event for object", distance)
+	else:
+		print("out of range")
 
 func handle_click_release(event: InputEvent):
 	pass

@@ -16,7 +16,7 @@ region = Rect2(160, 448, 32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lhiw5"]
 size = Vector2(32, 32)
 
-[node name="InteractiveTile" type="Node2D"]
+[node name="InteractiveObject" type="Node2D"]
 script = ExtResource("1_e43uq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
