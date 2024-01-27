@@ -43,9 +43,9 @@ func give_item(item: String):
 	
 func give_hand_item(item: InteractiveObject):
 	if (hands != null):
-		hands.position = position + (Vector2.DOWN * 32);
-		#hands.visible = true;
 		hands.get_node("StaticBody2D/CollisionShape2D").disabled = false;
+		hands.position = item.position;
+		#hands.visible = true;
 		
 	#item.visible = false;
 	item.get_node("StaticBody2D/CollisionShape2D").disabled = true;

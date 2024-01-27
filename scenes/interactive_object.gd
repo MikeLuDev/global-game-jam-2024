@@ -23,21 +23,21 @@ func _ready():
 	$StaticBody2D/CollisionShape2D.disabled = collision_disabled
 	if texture != null:
 		$Sprite2D.texture = texture;
+	$Label.text = item_name
 
 # Create a custom override in this for child classes
 func handle_primary_action(event: InputEvent):
-	var player = get_node("/root/Main/Player")
-	var distance = position.distance_to(player.position)
+	var distance = position.distance_to(Player.position)
 
 	if distance < interact_range:
 		interaction_success.emit()
 		print("Unhandled primary action click event for object", distance)
 		if item_storage_type == ItemStorageType.PocketInventory && item_name:
-			player.give_item(item_name)
+			Player.give_item(item_name)
 			queue_free()
 		
 		if item_storage_type == ItemStorageType.Handheld:
-			player.give_hand_item(self)
+			Player.give_hand_item(self)
 	else:
 		attempts += 1
 		interaction_fail.emit(attempts)
