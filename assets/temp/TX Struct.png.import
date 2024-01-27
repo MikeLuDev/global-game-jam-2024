@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7lu6wt4ff6vh"
-path="res://.godot/imported/TX Struct.png-54a6627605c978a4d365f0713238f729.ctex"
+path="res://.godot/imported/TX Struct.png-db3af6b6e959a499fef9140ced48242a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TX Struct.png"
-dest_files=["res://.godot/imported/TX Struct.png-54a6627605c978a4d365f0713238f729.ctex"]
+source_file="res://assets/temp/TX Struct.png"
+dest_files=["res://.godot/imported/TX Struct.png-db3af6b6e959a499fef9140ced48242a.ctex"]
 
 [params]
 
