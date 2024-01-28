@@ -1,5 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://c68cqvr5yl3dt"]
+[gd_scene load_steps=29 format=3 uid="uid://c68cqvr5yl3dt"]
 
+[ext_resource type="Texture2D" uid="uid://dtp0ufl3imp5d" path="res://assets/temp/TempGrass.png" id="1_bxlxr"]
 [ext_resource type="PackedScene" uid="uid://ccawi8bu7hpbi" path="res://scenes/debug.tscn" id="1_jlxaq"]
 [ext_resource type="Texture2D" uid="uid://33cdxg3bp80w" path="res://assets/temp/TX Plant.png" id="2_453wm"]
 [ext_resource type="Texture2D" uid="uid://ihqoophnje5" path="res://assets/temp/TX Tileset Grass.png" id="2_dhivk"]
@@ -12,6 +13,15 @@
 [ext_resource type="Texture2D" uid="uid://csle47kpeddof" path="res://assets/temp/TX Tileset Wall.png" id="10_wd0wr"]
 [ext_resource type="PackedScene" uid="uid://cy26yovqm0ibi" path="res://scenes/gui.tscn" id="12_5ddot"]
 [ext_resource type="PackedScene" uid="uid://dd311usgrxc3q" path="res://scenes/interactive_object.tscn" id="12_ji1i2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_db70g"]
+texture = ExtResource("1_bxlxr")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_u8oqk"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_db70g")
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_3nvap"]
 tile_data = PackedInt32Array(131072, 0, 2, 196608, 0, 3, 1, 65536, 0, 65537, 65536, 1, 131073, 65536, 2, 196609, 65536, 3, 2, 131072, 0, 65538, 131072, 1, 131074, 131072, 2, 196610, 131072, 3, 262146, 131072, 4, 3, 196608, 0, 65539, 196608, 1, 131075, 196608, 2, 196611, 196608, 3, 131076, 262144, 2)
@@ -1771,6 +1781,12 @@ region = Rect2(164, 347, 25, 34)
 [node name="Main" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_u8oqk")
+format = 2
+layer_0/tile_data = PackedInt32Array(-327688, 0, 0, -262152, 0, 0, -196616, 0, 0, -131080, 0, 0, -65544, 0, 0, -8, 0, 0, 65528, 0, 0, 131064, 0, 0, 196600, 0, 0, 262136, 0, 0, 327672, 0, 0, 393208, 0, 0, 458744, 0, 0, -327687, 0, 0, -262151, 0, 0, -196615, 0, 0, -131079, 0, 0, -65543, 0, 0, -7, 0, 0, 65529, 0, 0, 131065, 0, 0, 196601, 0, 0, 262137, 0, 0, 327673, 0, 0, 393209, 0, 0, 458745, 0, 0, -327686, 0, 0, -262150, 0, 0, -196614, 0, 0, -131078, 0, 0, -65542, 0, 0, -6, 0, 0, 65530, 0, 0, 131066, 0, 0, 196602, 0, 0, 262138, 0, 0, 327674, 0, 0, 393210, 0, 0, 458746, 0, 0, -327685, 0, 0, -262149, 0, 0, -196613, 0, 0, -131077, 0, 0, -65541, 0, 0, -5, 0, 0, 65531, 0, 0, 131067, 0, 0, 196603, 0, 0, 262139, 0, 0, 327675, 0, 0, 393211, 0, 0, 458747, 0, 0, -327684, 0, 0, -262148, 0, 0, -196612, 0, 0, -131076, 0, 0, -65540, 0, 0, -4, 0, 0, 65532, 0, 0, 131068, 0, 0, 196604, 0, 0, 262140, 0, 0, 327676, 0, 0, 393212, 0, 0, 458748, 0, 0, -327683, 0, 0, -262147, 0, 0, -196611, 0, 0, -131075, 0, 0, -65539, 0, 0, -3, 0, 0, 65533, 0, 0, 131069, 0, 0, 196605, 0, 0, 262141, 0, 0, 327677, 0, 0, 393213, 0, 0, 458749, 0, 0, -327682, 0, 0, -262146, 0, 0, -196610, 0, 0, -131074, 0, 0, -65538, 0, 0, -2, 0, 0, 65534, 0, 0, 131070, 0, 0, 196606, 0, 0, 262142, 0, 0, 327678, 0, 0, 393214, 0, 0, 458750, 0, 0, -327681, 0, 0, -262145, 0, 0, -196609, 0, 0, -131073, 0, 0, -65537, 0, 0, -1, 0, 0, 65535, 0, 0, 131071, 0, 0, 196607, 0, 0, 262143, 0, 0, 327679, 0, 0, 393215, 0, 0, 458751, 0, 0, -393216, 0, 0, -327680, 0, 0, -262144, 0, 0, -196608, 0, 0, -131072, 0, 0, -65536, 0, 0, 0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, -393215, 0, 0, -327679, 0, 0, -262143, 0, 0, -196607, 0, 0, -131071, 0, 0, -65535, 0, 0, 1, 0, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, -393214, 0, 0, -327678, 0, 0, -262142, 0, 0, -196606, 0, 0, -131070, 0, 0, -65534, 0, 0, 2, 0, 0, 65538, 0, 0, 131074, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, -393213, 0, 0, -327677, 0, 0, -262141, 0, 0, -196605, 0, 0, -131069, 0, 0, -65533, 0, 0, 3, 0, 0, 65539, 0, 0, 131075, 0, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, -393212, 0, 0, -327676, 0, 0, -262140, 0, 0, -196604, 0, 0, -131068, 0, 0, -65532, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, 196612, 0, 0, 262148, 0, 0, 327684, 0, 0, 393220, 0, 0, -393211, 0, 0, -327675, 0, 0, -262139, 0, 0, -196603, 0, 0, -131067, 0, 0, -65531, 0, 0, 5, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, -393210, 0, 0, -327674, 0, 0, -262138, 0, 0, -196602, 0, 0, -131066, 0, 0, -65530, 0, 0, 6, 0, 0, 65542, 0, 0, 131078, 0, 0, 196614, 0, 0, 262150, 0, 0, 327686, 0, 0, 393222, 0, 0, -393209, 0, 0, -327673, 0, 0, -262137, 0, 0, -196601, 0, 0, -131065, 0, 0, -65529, 0, 0, 7, 0, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 262151, 0, 0, 327687, 0, 0, 393223, 0, 0)
+
+[node name="OldTileMap" type="TileMap" parent="."]
+visible = false
 tile_set = SubResource("TileSet_fwfob")
 format = 2
 layer_0/name = "Ground"
@@ -1781,17 +1797,17 @@ layer_1/tile_data = PackedInt32Array(327687, 0, 0, 262169, 0, 0, 983064, 0, 0, 1
 [node name="Debug" parent="." instance=ExtResource("1_jlxaq")]
 
 [node name="InteractiveTile" parent="." instance=ExtResource("12_ji1i2")]
-position = Vector2(587, 305)
+position = Vector2(172, 11)
 item_name = "key"
 texture = SubResource("AtlasTexture_cw7gb")
 
 [node name="InteractiveObject" parent="." instance=ExtResource("12_ji1i2")]
-position = Vector2(363, 418)
+position = Vector2(-52, 124)
 item_storage_type = 1
 texture = SubResource("AtlasTexture_qj42u")
 
 [node name="InteractiveObject2" parent="." instance=ExtResource("12_ji1i2")]
-position = Vector2(540, 413)
+position = Vector2(125, 119)
 item_storage_type = 1
 
 [node name="Gui" parent="." instance=ExtResource("12_5ddot")]
