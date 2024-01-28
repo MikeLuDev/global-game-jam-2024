@@ -19,6 +19,15 @@ var attempts = 0
 signal interaction_success
 signal interaction_fail(attempts: int)
 
+func set_sprite(name: String):
+	var sprite_file = "res://assets/icons/{name}.png".format({ "name": name })
+	
+	if !ResourceLoader.exists(sprite_file):
+		print(sprite_file + "does not exist")
+		return
+	
+	$Sprite2D.texture = load(sprite_file)
+
 func _ready():
 	$StaticBody2D/CollisionShape2D.disabled = collision_disabled
 	if texture != null:

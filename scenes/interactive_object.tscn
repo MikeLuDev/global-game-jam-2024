@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dd311usgrxc3q"]
+[gd_scene load_steps=6 format=3 uid="uid://dd311usgrxc3q"]
 
-[ext_resource type="Texture2D" uid="uid://c73vonwne1flu" path="res://assets/temp/TX Props.png" id="1_6f1xr"]
 [ext_resource type="Script" path="res://scenes/interactive_object.gd" id="1_e43uq"]
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="2_04dud"]
+[ext_resource type="Texture2D" uid="uid://b07crf72wrfyp" path="res://assets/icons/apple.png" id="3_mtha3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dicft"]
 resource_local_to_scene = true
@@ -10,20 +10,17 @@ shader = ExtResource("2_04dud")
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 0.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bagmj"]
-atlas = ExtResource("1_6f1xr")
-region = Rect2(160, 448, 32, 32)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lhiw5"]
 size = Vector2(32, 32)
 
 [node name="InteractiveObject" type="Node2D"]
+scale = Vector2(1.99416, 2)
 script = ExtResource("1_e43uq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 2
 material = SubResource("ShaderMaterial_dicft")
-texture = SubResource("AtlasTexture_bagmj")
+texture = ExtResource("3_mtha3")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
