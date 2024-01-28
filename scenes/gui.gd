@@ -20,6 +20,9 @@ func _process(delta):
 	set_time_remaining()
 	set_objective()
 	set_win_loss()
+	set_score()
+	set_round()
+	set_happiness()
 
 # TODO: also hide this if the game is over
 func handle_visibility():
@@ -46,6 +49,15 @@ func set_time_remaining():
 func set_objective():
 	$Objective.text = GameManager.current_hint
 
+func set_round():
+	$Rounds.text = "Round: {r} / {m}".format({ "r": GameManager.round_count, "m": GameManager.max_rounds })
+
+func set_score():
+	$Score.text = "Score: {s}".format({ "s": GameManager.game_score })
+
+func set_happiness():
+	$Happiness.text = "Happiness: {h}".format({ "h": GameManager.king_current_happiness })
+	
 func set_win_loss():
 	var round_over = GameManager.game_state == GameManager.GameState.Win || GameManager.game_state == GameManager.GameState.Lose
 	var won = GameManager.game_state == GameManager.GameState.Win
@@ -66,3 +78,9 @@ func set_win_loss():
 
 func _on_new_game_button_pressed():
 	GameManager.new_game()
+
+
+func _on_quit_pressed():
+	GameManager.game_state = GameManager.GameState.NotStarted
+	Player.position = Vector2.ZERO
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

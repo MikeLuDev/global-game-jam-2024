@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dimao80uj5hjf"]
+[gd_scene load_steps=4 format=3 uid="uid://c5djkyt2jnkeu"]
 
 [ext_resource type="Script" path="res://scenes/king.gd" id="1_cypn4"]
 [ext_resource type="Texture2D" uid="uid://dbbyaqw4pstpv" path="res://assets/temp/ratking2.bmp" id="2_nn4bf"]

@@ -20,6 +20,11 @@ func _process(delta):
 	if hands != null:
 		hands.position = position + (Vector2.UP * 32);
 	
+	if GameManager.game_state == GameManager.GameState.NotStarted:
+		visible = false
+	elif !visible:
+		visible = true
+
 	if Input.is_action_pressed("move_right"):
 		_animated_sprite.play("WalkRight")
 	elif Input.is_action_pressed("move_left"):
@@ -31,11 +36,15 @@ func _process(delta):
 	else:
 		_animated_sprite.stop()
 
+
 func _physics_process(delta):
 	handle_camera_zoom()
 	handle_movement(delta)
 	
 func handle_movement(delta):
+	if GameManager.game_state != GameManager.GameState.Started:
+		return
+	
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	move_and_collide(input_direction * delta * speed)
 	

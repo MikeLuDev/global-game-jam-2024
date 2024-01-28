@@ -25,10 +25,15 @@ var current_target_item_name: String
 var current_hint: String = ""
 
 var game_state: GameState = GameState.NotStarted
+var game_score: int = 0
 var round_count: int = 0
+@export var max_rounds: int = 3
 var round_time_secs: float = 0
 @export var round_max_time_secs: float = 42
 var round_total_secs_played: float = 0
+
+signal start_new_round
+signal game_finish
 
 func _init():
 	load_item_data()
@@ -68,23 +73,33 @@ func _process(delta):
 func init_round():
 	cleanup_game()
 	round_count += 1
-	print("Starting Round #{round_count}".format({ "round_count": round_count }))
+	king_current_happiness = 0
+	
+	if round_count >= max_rounds:
+		end_game(true)
+	else:
+		start_new_round.emit()
+		print("Starting Round #{round_count}".format({ "round_count": round_count }))
 
 func new_game():
 	cleanup_game()
 	game_state = GameState.Started
 	round_count = 0
+	game_score = 0
 	init_round()
 
 ## TODO: handle game over state
 func end_game(won: bool):
 	if won:
+		game_score += (round_max_time_secs - round_time_secs) * 3
 		game_state = GameState.Win
 	else:
 		game_state = GameState.Lose
+	game_finish.emit()
 	cleanup_game()
 
 func cleanup_game():
 	current_hint = ""
 	current_target_item_name = ""
 	round_time_secs = 0
+	current_failures_count = 0
