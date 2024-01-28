@@ -7,86 +7,36 @@
 	},
 	"moods": ["poor", "greedy", "opulent"]
   },
-  "bread": {
+  "mushroom": {
 	"attributes": {
-	  "round": 0.25,
-	  "dull": 0.5,
-	  "soft": 0.75
-	},
-	"moods": ["hungry"]
-  },
-  "blanket": {
-	"attributes": {
-	  "wavy": 0.5,
-	  "dull": 0.5,
-	  "soft": 1.0
-	},
-	"moods": ["creative", "lonely", "scared"]
-  },
-  "frog": {
-	"attributes": {
-	  "loud": 0.5,
-	  "dull": 0.5,
-	  "springy": 0.5
-	},
-	"moods": ["lonely"]
-  },
-  "quill": {
-	"attributes": {
-	  "pointy": 0.5,
-	  "sharp": 0.25
-	},
-	"moods": ["creative"]
-  },
-  "parchment": {
-	"attributes": {
-	  "smooth": 1.0,
-	  "thin": 0.5
-	},
-	"moods": ["creative", "bored"]
-  },
-  "candle": {
-	"attributes": {
-	  "hot": 0.75,
-	  "bright": 0.25,
-	  "comforting": 0.5
-	},
-	"moods": ["lonely", "scared"]
-  },
-  "paintbrush": {
-	"attributes": {
-	  "artistic": 1.0,
+	  "edible": 0.5,
 	  "soft": 0.5
 	},
-	"moods": ["creative", "bored"]
-  },
-  "knife": {
-	"attributes": {
-	  "sharp": 1.0,
-	  "shiny": 1.0
-	},
-	"moods": ["hungry", "creative"]
-  },
-  "goblet": {
-	"attributes": {
-	  "fancy": 1.0,
-	  "round": 0.5
-	},
-	"moods": ["thirsty"]
-  },
-  "needle": {
-	"attributes": {
-	  "pointy": 1.0,
-	  "sharp": 0.5
-	},
-	"moods": ["creative", "bored"]
-  },
-  "bowl": {
-	"attributes": {
-	  "round": 0.5,
-	  "dull": 0.5
-	},
 	"moods": ["hungry"]
+  },
+  "roots": {
+	"attributes": {
+	  "wooden": 0.5,
+	  "wavy": 0.5,
+	  "dirty": 1
+	},
+	"moods": ["bored"]
+  },
+  "potted_plant": {
+	"attributes": {
+	  "alive": 0.5,
+	  "dirty": 0.5,
+	  "green": 0.5
+	},
+	"moods": ["adventurous", "bored", "creative"]
+  },
+  "ruby": {
+	"attributes": {
+	  "shiny": 1.0,
+	  "red": 1.0,
+	  "hard": 0.5
+	},
+	"moods": ["opulent", "greedy"]
   },
   "book": {
 	"attributes": {
@@ -96,69 +46,171 @@
 	},
 	"moods": ["bored", "creative"]
   },
-  "spoon": {
+  "letter": {
 	"attributes": {
-	  "round": 0.5,
+	  "flat": 0.5,
+	  "useful": 0.5
+	},
+	"moods": ["wistful", "creative"]
+  },
+  "scroll": {
+	"attributes": {
 	  "dull": 0.5,
-	  "reflective": 0.5
+	  "soft": 0.5,
+	  "entertaining": 1.0
+	},
+	"moods": ["bored", "creative"]
+  },
+  "map": {
+	"attributes": {
+	  "dull": 0.5,
+	  "soft": 0.5,
+	  "useful": 1.0
+	},
+	"moods": ["adventurous", "wistful"]
+  },
+  "dice": {
+	"attributes": {
+	  "square": 0.5,
+	  "hard": 0.5,
+	  "fun": 0.5
+	},
+	"moods": ["bored", "poor", "greedy"]
+  },
+  "booze": {
+	"attributes": {
+	  "dull": 0.5,
+	  "soft": 0.5,
+	  "entertaining": 1.0
+	},
+	"moods": ["bored", "creative"]
+  },
+  "apple": {
+	"attributes": {
+	  "edible": 0.5,
+	  "fruity": 0.5,
+	  "red": 1.0
 	},
 	"moods": ["hungry"]
   },
-  "mirror": {
+  "banana": {
 	"attributes": {
-	  "shiny": 1.0,
-	  "round": 0.5,
-	  "reflective": 1.0
+	  "edible": 0.5,
+	  "fruity": 0.5,
+	  "yellow": 1.0
 	},
-	"moods": ["lonely", "vain"]
+	"moods": ["hungry"]
   },
-  "crown": {
+  "pear": {
 	"attributes": {
-	  "fancy": 1.0,
-	  "shiny": 1.0,
-	  "round": 0.5
+	  "edible": 0.5,
+	  "fruity": 0.5,
+	  "green": 1.0
 	},
-	"moods": ["greedy", "opulent", "fancy"]
+	"moods": ["hungry"]
   },
-  "ring": {
+  "lemon": {
 	"attributes": {
-	  "pretty": 1.0,
-	  "round": 0.5,
-	  "fancy": 1.0
+	  "edible": 0.5,
+	  "fruity": 0.5,
+	  "yellow": 1.0
 	},
-	"moods": ["greedy", "fancy", "opulent"]
+	"moods": ["hungry"]
   },
-  "sword": {
+  "strawberry": {
 	"attributes": {
-	  "sharp": 1.0,
-	  "pointy": 1.0,
-	  "dangerous": 1.0
+	  "edible": 0.5,
+	  "fruity": 0.5,
+	  "red": 1.0
 	},
-	"moods": ["combative", "scared"]
+	"moods": ["hungry"]
   },
   "shield": {
 	"attributes": {
-	  "round": 0.5,
-	  "dull": 0.5,
+	  "wooden": 0.5,
+	  "hard": 0.5,
 	  "protective": 1.0
 	},
-	"moods": ["combative", "scared"]
+	"moods": ["adventurous", "scared"]
   },
-  "helmet": {
+  "bow": {
 	"attributes": {
-	  "round": 0.5,
-	  "dull": 0.5,
-	  "protective": 1.0
+	  "wooden": 0.5,
+	  "hard": 0.5,
+	  "dangerous": 1.0
 	},
-	"moods": ["combative", "scared"]
+	"moods": ["adventurous", "scared"]
+  },
+  "sword": {
+	"attributes": {
+	  "metal": 0.5,
+	  "hard": 0.5,
+	  "sharp": 1.0
+	},
+	"moods": ["adventurous", "scared"]
+  },
+  "axe": {
+	"attributes": {
+	  "metal": 0.5,
+	  "hard": 0.5,
+	  "dangerous": 1.0
+	},
+	"moods": ["adventurous", "scared"]
   },
   "armor": {
 	"attributes": {
-	  "round": 0.5,
-	  "dull": 0.5,
-	  "shiny": 0.5,
+	  "metal": 0.5,
+	  "hard": 0.5,
 	  "protective": 1.0
 	},
-	"moods": ["combative", "scared"]
+	"moods": ["adventurous", "scared"]
+  },
+  "diamond": {
+	"attributes": {
+	  "shiny": 1.0,
+	  "hard": 0.5,
+	  "glittery": 0.5
+	},
+	"moods": ["opulent", "greedy"]
+  },
+  "helmet": {
+	"attributes": {
+	  "metal": 0.5,
+	  "hard": 0.5,
+	  "protective": 1.0
+	},
+	"moods": ["adventurous", "scared"]
+  },
+  "necklace": {
+	"attributes": {
+	  "shiny": 1.0,
+	  "hard": 0.5,
+	  "golden": 0.5
+	},
+	"moods": ["opulent", "greedy"]
+  },
+  "ring": {
+	"attributes": {
+	  "shiny": 1.0,
+	  "round": 0.5,
+	  "golden": 0.5
+	},
+	"moods": ["opulent", "greedy"]
+  },
+  "treasure_chest": {
+	"attributes": {
+	  "wooden": 0.5,
+	  "hard": 0.5,
+	  "shiny": 1.0
+	},
+	"moods": ["opulent", "greedy"]
+  },
+  "pickaxe": {
+	"attributes": {
+	  "metal": 0.5,
+	  "wooden": 0.5,
+	  "useful": 1.0
+	},
+	"moods": ["adventurous"]
   }
 }
