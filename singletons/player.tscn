@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://kqarvpjuwnwj"]
+[gd_scene load_steps=6 format=3 uid="uid://kqarvpjuwnwj"]
 
-[ext_resource type="Texture2D" uid="uid://b3u2l3l7ni1q1" path="res://assets/temp/TX Player.png" id="1_dblx5"]
 [ext_resource type="Script" path="res://singletons/player.gd" id="1_nrflr"]
+[ext_resource type="Texture2D" uid="uid://l15u2tw011ls" path="res://assets/Character/Shadow.png" id="2_8lyh0"]
+[ext_resource type="Texture2D" uid="uid://b6pa0tlikyj58" path="res://assets/Character/SpriteSheet.png" id="2_a041m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q0nrq"]
-atlas = ExtResource("1_dblx5")
-region = Rect2(6, 14, 21, 44)
+atlas = ExtResource("2_a041m")
+region = Rect2(0, 0, 512, 1024)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_omo50"]
 size = Vector2(20, 44)
@@ -16,8 +17,16 @@ collision_mask = 2
 script = ExtResource("1_nrflr")
 metadata/_edit_group_ = true
 
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 69.89)
+scale = Vector2(-0.999689, 1.47663)
+texture = ExtResource("2_8lyh0")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_q0nrq")
+hframes = 2
+vframes = 4
+frame = 1
 region_rect = Rect2(5.83655, 13.5665, 21.756, 45.1336)
 
 [node name="Camera2D" type="Camera2D" parent="."]
