@@ -35,12 +35,11 @@ func spawn_items():
 	randomized_items.shuffle()
 	for item_name in randomized_items:
 		var instance = interactive_object.instantiate() as InteractiveObject
-		
 		var item_data = GameManager.item_data.get(item_name)
+		
 		instance.item_name = item_name
 		instance.position = spawn_nodes[spawn_index].position
 		instance.item_storage_type = 1
-		
 		instance.set_sprite(item_name)
 		
 		spawn_index += 1
