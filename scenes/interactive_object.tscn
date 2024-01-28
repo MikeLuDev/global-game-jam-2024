@@ -10,8 +10,8 @@ shader = ExtResource("2_04dud")
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhiw5"]
-size = Vector2(32, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j25nd"]
+size = Vector2(29.0849, 30.5)
 
 [node name="InteractiveObject" type="Node2D"]
 scale = Vector2(1.99416, 2)
@@ -23,11 +23,13 @@ material = SubResource("ShaderMaterial_dicft")
 texture = ExtResource("3_mtha3")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 2
+collision_layer = 4
+collision_mask = 0
 input_pickable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_lhiw5")
+position = Vector2(-3.58675e-07, -0.75)
+shape = SubResource("RectangleShape2D_j25nd")
 
 [node name="Label" type="Label" parent="."]
 z_index = 3

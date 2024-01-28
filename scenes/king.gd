@@ -4,6 +4,7 @@ var rng = RandomNumberGenerator.new()
 
 @export var dialog_timeout_ms_per_char: int = 100
 @export var dialog_display_min_ms: int = 1000
+@export var time_added_on_success: int = 5
 var dialog_timeout_total: int = 0
 var time_since_last_dialog: int = 0
 
@@ -93,6 +94,7 @@ func give_item_to_king(item_name: String):
 	else:
 		GameManager.king_current_happiness += happiness_earned
 		GameManager.game_score += happiness_earned * 3
+		GameManager.add_time_to_round(time_added_on_success)
 		if GameManager.king_current_happiness > GameManager.king_max_happiness:
 			GameManager.init_round()
 		

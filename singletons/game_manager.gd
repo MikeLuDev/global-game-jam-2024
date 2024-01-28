@@ -41,7 +41,7 @@ func _init():
 
 ## Loads all item data on init of this scene into memory
 func load_item_data():
-	var file = FileAccess.open("data/items.json", FileAccess.READ)
+	var file = FileAccess.open("res://data/items.json", FileAccess.READ)
 	var contents = file.get_as_text()
 
 	item_data = JSON.parse_string(contents)
@@ -88,7 +88,7 @@ func new_game():
 	game_score = 0
 	init_round()
 
-## TODO: handle game over state
+
 func end_game(won: bool):
 	if won:
 		game_score += (round_max_time_secs - round_time_secs) * 3
@@ -103,3 +103,6 @@ func cleanup_game():
 	current_target_item_name = ""
 	round_time_secs = 0
 	current_failures_count = 0
+
+func add_time_to_round(amount: int):
+	round_time_secs -= amount
