@@ -33,6 +33,7 @@ input_pickable = true
 shape = SubResource("RectangleShape2D_lhiw5")
 
 [node name="Label" type="Label" parent="."]
+z_index = 3
 offset_left = -19.0
 offset_top = -28.0
 offset_right = 68.0

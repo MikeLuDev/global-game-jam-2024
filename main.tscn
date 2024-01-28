@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c68cqvr5yl3dt"]
+[gd_scene load_steps=26 format=3 uid="uid://c68cqvr5yl3dt"]
 
 [ext_resource type="PackedScene" uid="uid://ccawi8bu7hpbi" path="res://scenes/debug.tscn" id="1_jlxaq"]
 [ext_resource type="Texture2D" uid="uid://33cdxg3bp80w" path="res://assets/temp/TX Plant.png" id="2_453wm"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://7lu6wt4ff6vh" path="res://assets/temp/TX Struct.png" id="7_tqmnq"]
 [ext_resource type="Texture2D" uid="uid://gjy5xnca3h32" path="res://assets/temp/TX Tileset Stone Ground.png" id="9_er6dg"]
 [ext_resource type="Texture2D" uid="uid://csle47kpeddof" path="res://assets/temp/TX Tileset Wall.png" id="10_wd0wr"]
+[ext_resource type="PackedScene" uid="uid://cy26yovqm0ibi" path="res://scenes/gui.tscn" id="12_5ddot"]
 [ext_resource type="PackedScene" uid="uid://dd311usgrxc3q" path="res://scenes/interactive_object.tscn" id="12_ji1i2"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_3nvap"]
@@ -1792,3 +1793,5 @@ texture = SubResource("AtlasTexture_qj42u")
 [node name="InteractiveObject2" parent="." instance=ExtResource("12_ji1i2")]
 position = Vector2(540, 413)
 item_storage_type = 1
+
+[node name="Gui" parent="." instance=ExtResource("12_5ddot")]
