@@ -41,7 +41,7 @@ func _init():
 
 ## Loads all item data on init of this scene into memory
 func load_item_data():
-	var file = FileAccess.open("data/items.json", FileAccess.READ)
+	var file = FileAccess.open("res://data/items.json", FileAccess.READ)
 	var contents = file.get_as_text()
 
 	item_data = JSON.parse_string(contents)
