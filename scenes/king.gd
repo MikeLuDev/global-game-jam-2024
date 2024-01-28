@@ -53,8 +53,6 @@ func generate_new_task():
 	print("## King's hint string: ", hint_string_fmt)
 	GameManager.current_hint = hint_string_fmt
 	say(hint_string_fmt)
-	
-	GameManager.round_time_secs = 0
 
 ## Attempt to given an item to the king to satisfy his request
 ## TODO this method is entirely untested
