@@ -82,4 +82,5 @@ func _on_new_game_button_pressed():
 
 func _on_quit_pressed():
 	GameManager.game_state = GameManager.GameState.NotStarted
+	Player.position = Vector2.ZERO
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
