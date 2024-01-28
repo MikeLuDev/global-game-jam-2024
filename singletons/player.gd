@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
 @onready var _animated_sprite = $AnimatedSprite2D
-@export var speed = 250
+@export var speed = 500
 @export var zoom_amount = 0.5
 
-@export var min_zoom = Vector2(2, 2)
-@export var max_zoom = Vector2(4, 4)
+@export var min_zoom = Vector2(1, 1)
+@export var max_zoom = Vector2(1.25, 1.25)
 
 var pockets = []
 var hands: InteractiveObject

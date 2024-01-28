@@ -4,6 +4,8 @@ var interactive_object = preload("res://scenes/interactive_object.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if GameManager.game_state != GameManager.GameState.Started:
+		GameManager.new_game()
 	$King.generate_new_task()
 	
 	var x = 0;

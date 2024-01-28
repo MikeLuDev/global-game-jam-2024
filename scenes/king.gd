@@ -49,6 +49,7 @@ func generate_new_task():
 	var hint_string_fmt = hint_string.format({ "mood": mood, "attribute": item_attribute })
 	
 	print("## King's hint string: ", hint_string_fmt)
+	GameManager.current_hint = hint_string_fmt
 	say(hint_string_fmt)
 
 ## Attempt to given an item to the king to satisfy his request
@@ -92,7 +93,7 @@ func give_item_to_king(item_name: String):
 		
 	# If failures are excessive, the game is over
 	if GameManager.current_failures_count >= GameManager.max_failed_attempts:
-		GameManager.game_over()
+		GameManager.end_game(false)
 		
 	print("New king happiness: ", GameManager.king_current_happiness)
 	

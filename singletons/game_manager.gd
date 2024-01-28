@@ -2,6 +2,13 @@ extends Node2D
 
 var rng = RandomNumberGenerator.new()
 
+enum GameState {
+	NotStarted,
+	Started,
+	Win,
+	Lose
+}
+
 ## The number of attempts a player can fail to deliver an item before the game is over
 @export var max_failed_attempts: int = 3
 var current_failures_count: int = 0
@@ -15,11 +22,13 @@ var mood_options: Array[String] = []
 var attribute_options: Array[String] = []
 
 var current_target_item_name: String
+var current_hint: String = ""
 
-var round_started: bool = true
+var game_state: GameState = GameState.NotStarted
 var round_count: int = 0
-var round_time_ms: float = 0
-var round_max_time_ms: float = 42
+var round_time_secs: float = 0
+@export var round_max_time_secs: float = 42
+var round_total_secs_played: float = 0
 
 func _init():
 	load_item_data()
@@ -48,21 +57,34 @@ func load_item_data():
 		
 	print("## ALL ATTRIBUTES - ", attribute_options)
 	print("## ALL MOODS - ", mood_options)
-	
+
 func _process(delta):
-	if (round_started):
-		round_time_ms += delta
-		if round_time_ms >= round_max_time_ms:
-			game_over()
-	
+	if (game_state == GameState.Started):
+		round_time_secs += delta
+		round_total_secs_played += delta
+		if round_time_secs >= round_max_time_secs:
+			end_game(false)
+
 func init_round():
+	cleanup_game()
 	round_count += 1
-	round_time_ms = 0
-	round_started = true
 	print("Starting Round #{round_count}".format({ "round_count": round_count }))
-	
-## TODO: handle game over state
-func game_over():
-	round_started = false
+
+func new_game():
+	cleanup_game()
+	game_state = GameState.Started
 	round_count = 0
-	print("Game over :'(")
+	init_round()
+
+## TODO: handle game over state
+func end_game(won: bool):
+	if won:
+		game_state = GameState.Win
+	else:
+		game_state = GameState.Lose
+	cleanup_game()
+
+func cleanup_game():
+	current_hint = ""
+	current_target_item_name = ""
+	round_time_secs = 0
