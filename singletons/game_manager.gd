@@ -33,6 +33,7 @@ var round_time_secs: float = 0
 var round_total_secs_played: float = 0
 
 signal start_new_round
+signal game_finish
 
 func _init():
 	load_item_data()
@@ -94,6 +95,7 @@ func end_game(won: bool):
 		game_state = GameState.Win
 	else:
 		game_state = GameState.Lose
+	game_finish.emit()
 	cleanup_game()
 
 func cleanup_game():

@@ -5,6 +5,8 @@ var interactive_object = preload("res://scenes/interactive_object.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GameManager.connect("start_new_round", handle_new_round)
+	GameManager.connect("game_finish", handle_game_finish)	
+	
 	if GameManager.game_state != GameManager.GameState.Started:
 		GameManager.new_game()
 
@@ -41,3 +43,15 @@ func spawn_items():
 			break
 		
 		$ItemSpawnGroup.add_child(instance)
+
+func handle_game_finish():
+	var sfx_tag = "Victory" if GameManager.game_state == GameManager.GameState.Win else "Game_Over"
+	var audio_file = "res://assets/music/{f}.mp3".format({ "f": sfx_tag })
+	if !ResourceLoader.exists(audio_file):
+		print(audio_file + "does not exist")
+		return
+	print(audio_file)
+	var sfx = load(audio_file)
+	sfx.set_loop(false)
+	$UIAudio.stream = sfx
+	$UIAudio.play()
