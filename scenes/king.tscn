@@ -7,6 +7,7 @@
 size = Vector2(52, 66)
 
 [node name="King" type="Node2D"]
+scale = Vector2(3.40328, 3.40328)
 script = ExtResource("1_cypn4")
 metadata/_edit_group_ = true
 
@@ -14,6 +15,7 @@ metadata/_edit_group_ = true
 texture = ExtResource("2_nn4bf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 collision_layer = 2
 input_pickable = true
 
