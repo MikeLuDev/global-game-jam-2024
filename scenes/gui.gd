@@ -38,10 +38,17 @@ func handle_visibility():
 		$Objective.visible = false
 		$TimeLeft.visible = false
 		$WinLoseContainer.visible = true
+		
+		if GameManager.game_state -- GameManager.GameState.Lose:
+			$Sprite2D.visible = true
+		else:
+			$Sprite2D.visible = false
+		
 	else:
 		$Objective.visible = true
 		$TimeLeft.visible = true
 		$WinLoseContainer.visible = false
+		$Sprite2D.visible = false
 
 func set_time_remaining():	
 	$TimeLeft.text = "Time Remaining: " + format_time(GameManager.round_max_time_secs - GameManager.round_time_secs)

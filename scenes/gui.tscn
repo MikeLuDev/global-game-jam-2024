@@ -1,9 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://2lyk4f02i3fp"]
+[gd_scene load_steps=3 format=3 uid="uid://2lyk4f02i3fp"]
 
 [ext_resource type="Script" path="res://scenes/gui.gd" id="1_to8py"]
+[ext_resource type="Texture2D" uid="uid://dyt064j6f0wl1" path="res://assets/images/SadKing.png" id="2_0g265"]
 
 [node name="Gui" type="CanvasLayer"]
 script = ExtResource("1_to8py")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(604, 355)
+scale = Vector2(0.733796, 0.733796)
+texture = ExtResource("2_0g265")
 
 [node name="Objective" type="Label" parent="."]
 anchors_preset = 5
