@@ -6,5 +6,8 @@
 script = ExtResource("1_8y7en")
 
 [node name="FPS" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 72.0
+offset_bottom = 31.0
+text = "FPS: 144"

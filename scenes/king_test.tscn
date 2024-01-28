@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dddwp3agoiu0m"]
+[gd_scene load_steps=4 format=3 uid="uid://dddwp3agoiu0m"]
 
 [ext_resource type="Script" path="res://scenes/king_test.gd" id="1_t3fw2"]
-[ext_resource type="PackedScene" path="res://scenes/king.tscn" id="2_0lwie"]
+[ext_resource type="PackedScene" uid="uid://dimao80uj5hjf" path="res://scenes/king.tscn" id="2_0lwie"]
+[ext_resource type="PackedScene" uid="uid://cy26yovqm0ibi" path="res://scenes/gui.tscn" id="3_3vmmo"]
 
 [node name="KingTest" type="Node2D"]
 script = ExtResource("1_t3fw2")
 
 [node name="King" parent="." instance=ExtResource("2_0lwie")]
 position = Vector2(91, 95)
+
+[node name="Gui" parent="." instance=ExtResource("3_3vmmo")]
