@@ -105,8 +105,8 @@ texture = ExtResource("2_8lyh0")
 rotation = 3.14159
 scale = Vector2(-1, -1)
 sprite_frames = SubResource("SpriteFrames_npu2t")
-animation = &"WalkDown"
-frame_progress = 0.96933
+animation = &"WalkLeft"
+frame_progress = 0.309177
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

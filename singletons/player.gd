@@ -22,17 +22,11 @@ func _process(delta):
 	
 	if Input.is_action_pressed("move_right"):
 		_animated_sprite.play("WalkRight")
-	else:
-		_animated_sprite.stop()
-	if Input.is_action_pressed("move_left"):
+	elif Input.is_action_pressed("move_left"):
 		_animated_sprite.play("WalkLeft")
-	else:
-		_animated_sprite.stop()
-	if Input.is_action_pressed("move_down"):
+	elif Input.is_action_pressed("move_down"):
 		_animated_sprite.play("WalkDown")
-	else:
-		_animated_sprite.stop()
-	if Input.is_action_pressed("move_up"):
+	elif Input.is_action_pressed("move_up"):
 		_animated_sprite.play("WalkUp")
 	else:
 		_animated_sprite.stop()
