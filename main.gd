@@ -14,13 +14,12 @@ func _process(delta):
 	pass
 
 func handle_new_round():
+	$King.generate_new_task()
 	spawn_items()
 	if GameManager.round_count == 1:
 		Player.position = Vector2.ZERO
 	
 func spawn_items():
-	$King.generate_new_task()
-	
 	var spawn_nodes = $ItemSpawnGroup.get_children()
 	var spawn_index = 0
 	
