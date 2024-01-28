@@ -75,7 +75,7 @@ func init_round():
 	round_count += 1
 	king_current_happiness = 0
 	
-	if round_count > max_rounds:
+	if round_count >= max_rounds:
 		end_game(true)
 	else:
 		start_new_round.emit()
@@ -103,3 +103,6 @@ func cleanup_game():
 	current_target_item_name = ""
 	round_time_secs = 0
 	current_failures_count = 0
+
+func add_time_to_round(amount: int):
+	round_time_secs -= amount
