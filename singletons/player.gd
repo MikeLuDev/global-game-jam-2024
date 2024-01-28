@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 250
+@export var speed = 500
 @export var zoom_amount = 0.5
 
 @export var min_zoom = Vector2(1, 1)
