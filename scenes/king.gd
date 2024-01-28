@@ -60,6 +60,7 @@ func generate_new_task():
 func give_item_to_king(item_name: String):
 	Player.hands.queue_free()
 	Player.hands = null
+	$AudioStreamPlayer.play()
 	
 	print("## KING - presenting ", item_name, " to the King")
 	

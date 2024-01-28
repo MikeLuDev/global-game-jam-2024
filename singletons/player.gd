@@ -9,7 +9,7 @@ extends CharacterBody2D
 
 var pockets = []
 var hands: InteractiveObject
-
+var moving: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,15 +27,25 @@ func _process(delta):
 
 	if Input.is_action_pressed("move_right"):
 		_animated_sprite.play("WalkRight")
+		moving = true
 	elif Input.is_action_pressed("move_left"):
 		_animated_sprite.play("WalkLeft")
+		moving = true
 	elif Input.is_action_pressed("move_down"):
 		_animated_sprite.play("WalkDown")
+		moving = true
 	elif Input.is_action_pressed("move_up"):
 		_animated_sprite.play("WalkUp")
+		moving = true
 	else:
 		_animated_sprite.stop()
+		moving = false
 
+	if moving:
+		if $Jingles.playing == false:
+			$Jingles.play()
+	else:
+		$Jingles.stop()
 
 func _physics_process(delta):
 	handle_camera_zoom()

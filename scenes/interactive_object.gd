@@ -37,9 +37,10 @@ func _ready():
 # Create a custom override in this for child classes
 func handle_primary_action(event: InputEvent):
 	var distance = position.distance_to(Player.position)
-
+	
 	if distance < interact_range:
 		interaction_success.emit()
+		$AudioStreamPlayer.play()
 		print("Unhandled primary action click event for object", distance)
 		if item_storage_type == ItemStorageType.PocketInventory && item_name:
 			Player.give_item(item_name)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5djkyt2jnkeu"]
+[gd_scene load_steps=5 format=3 uid="uid://c5djkyt2jnkeu"]
 
 [ext_resource type="Script" path="res://scenes/king.gd" id="1_cypn4"]
 [ext_resource type="Texture2D" uid="uid://dbbyaqw4pstpv" path="res://assets/temp/ratking2.bmp" id="2_nn4bf"]
+[ext_resource type="AudioStream" uid="uid://du2x1lto7g6od" path="res://assets/sfx/doop.wav" id="3_ss1e5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7vcv"]
 size = Vector2(52, 66)
@@ -33,5 +34,8 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "king_dialog_text_appears_here"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ss1e5")
 
 [connection signal="input_event" from="StaticBody2D" to="." method="_on_static_body_2d_input_event"]
