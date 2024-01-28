@@ -17,6 +17,11 @@ func _ready():
 func _process(delta):
 	if hands != null:
 		hands.position = position + (Vector2.UP * 32);
+	
+	if GameManager.game_state == GameManager.GameState.NotStarted:
+		visible = false
+	elif !visible:
+		visible = true
 
 func _physics_process(delta):
 	handle_camera_zoom()

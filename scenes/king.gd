@@ -16,12 +16,14 @@ func _process(delta):
 	time_since_last_dialog += delta * 1000
 	if time_since_last_dialog >= dialog_timeout_total:
 		$Label.visible = false
-
+		
+	# TODO: probably should be checked on new game function or signal from GameManager?
+	if !GameManager.current_target_item_name && GameManager.game_state == GameManager.GameState.Started:
+		generate_new_task()
 
 ## Picks a mood for the king and an item the king wants based on that mood
 func generate_new_task():
 	print("## KING - Generating new task")
-	GameManager.init_round()
 	
 	# Pick a random mood
 	var mood = GameManager.mood_options[rng.randi_range(0, GameManager.mood_options.size() - 1)]
@@ -51,6 +53,8 @@ func generate_new_task():
 	print("## King's hint string: ", hint_string_fmt)
 	GameManager.current_hint = hint_string_fmt
 	say(hint_string_fmt)
+	
+	GameManager.round_time_secs = 0
 
 ## Attempt to given an item to the king to satisfy his request
 ## TODO this method is entirely untested
@@ -90,6 +94,9 @@ func give_item_to_king(item_name: String):
 		GameManager.current_failures_count += 1
 	else:
 		GameManager.king_current_happiness += happiness_earned
+		GameManager.game_score += happiness_earned * 3
+		if GameManager.king_current_happiness > GameManager.king_max_happiness:
+			GameManager.init_round()
 		
 	# If failures are excessive, the game is over
 	if GameManager.current_failures_count >= GameManager.max_failed_attempts:
