@@ -16,6 +16,8 @@ func _process(delta):
 	pass
 
 func handle_new_round():
+	$UIAudio.stop()
+	$BackgroundMusic.play()
 	$King.generate_new_task()
 	spawn_items()
 	if GameManager.round_count == 1:
@@ -55,3 +57,4 @@ func handle_game_finish():
 	sfx.set_loop(false)
 	$UIAudio.stream = sfx
 	$UIAudio.play()
+	$BackgroundMusic.stop()
